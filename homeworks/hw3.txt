@@ -1,0 +1,18 @@
+
+The information from the GDB tells us that the memory address 0x7fffffffe000 is cast as a three-dimensional array of chars. Since the array is three-dimensional, magic8ball[3][4] will output a C string. Each char is one byte, so each C string of 8 chars is 8 bytes, and each array of C strings is 64 bytes. 
+
+Thus, the address we're interested in is 
+	
+	0x7fffffffe000 + (64)(3) + (4)(8) 
+		= 0x7fffffffe000 + 0xC0 + 0x20
+		= 0x7fffffffe0E0
+
+The C String at that address is:
+	
+	0x57	0x72	0x6f	0x6e	0x67
+
+Which translates to:
+
+	W	R	O 	N	G
+
+FINAL ANSWER: "wrong"

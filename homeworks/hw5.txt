@@ -1,0 +1,18 @@
+Here is a prototype of a optimized psum function:
+
+void psum(float a[], float p[], long n)
+{
+    long i;
+    p[0] = a[0];
+    
+    for(i=1; i<n-1; i+=2) {
+        p[i] = p[i-1] + a[i];
+        p[i+1] = p[i-1] + (a[i] + a[i+1]);
+    }
+    
+    
+    if (i != n)
+        p[n-1] = p[n-2] + a[n-1];
+}
+
+This function has half of the iterations of the previous function, which allows it to increase its throughput. This function can always perform three addition operations simultaneously. The sum variable is always independent of any other operation, so it can be performed any time. The p[I] operation depends on p[i-1] being calculated, so it can be performed as long as the third line of arithmetic from the previous iteration is complete. The p[I+1] operation is dependent on sum and p[I] being computed, so it can proceed once the other two sums in the loop are complete. This allows us to take advantage of the advanced hardware on machines today because we can how perform three addition operation simultaneously instead of having to perform each of them sequentially. If we wanted to unroll by another factor of 2, we could change the statement executed at the end of the loop to be I+=4, and then perform a similar process.

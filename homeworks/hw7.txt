@@ -1,0 +1,22 @@
+[ 1 ]
+
+The code would print: "The value of i is: 7."
+
+Here's a walkthrough of the code:
+
+1. First, the function initializes the registers $s3, $s4, and $s5 to 0, 1, and 0 respectively. It also save the return address of the function to $s7 and the address of the "save" array to $s6.
+
+2. Enters "Loop"
+	$t8 = *(4*$s3 + $s6) 	// calculates the ith entry in the array 
+				// (adds 4-byte offset * i to starting address of array)
+	if the ith element is not 0, jump to exit.
+	else, increment i and jump to loop.
+
+3. In the "exit" section, it prints the message "The value of i is: " and then prints the value of i, which corresponds to the first non-zero entry in the array, which is at index 7.
+
+4. Finally, it stores the return address back to $ra and returns from the function.
+	
+
+[ 2 ]
+
+The worst ordering is (e) jyix. To maximize cache misses, we want to vary the number within the first set of brackets for the array access as much as possible. Because of this, we want i and x in the inner-most loops. We can similarly minimize locality by putting the numbers that very the outer-most sets of brackets on the outer-most loops, as this does not take advantage of locality. Thus, j and y should be on the outer-most loops.
