@@ -7,7 +7,7 @@ These are my projects from CS33 in Spring 2023 with Professor Glenn Reinman. Thi
 | Data Lab   | 47/47 |
 | Bomb Lab   | 70/70 |
 | Attack Lab    | 100/100 |
-| Parallel Lab| 100/100 |
+| Parallel Lab| 105/100 |
 
 | Homework    | Grade |
 | :---------: | :---: |
