@@ -18,3 +18,6 @@ These are my projects from CS33 in Spring 2023 with Professor Glenn Reinman. Thi
 | Homework 5   | 1/1 |
 | Homework 6   | 1/1 |
 | Homework 7   | 1/1 |
+
+
+![](https://view-counter.onrender.com/gh-CS33)
